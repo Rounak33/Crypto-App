@@ -5,7 +5,7 @@ import Crypto from './components/crypto';
 
 function App() {
   const [crypto, setCrypto] = useState([]);
-  const [search] = useState('');
+  const [search, setSearch] = useState('');
 
 
   useEffect(() => {
@@ -20,7 +20,9 @@ function App() {
       .catch(error => console.log(error));
   }, []);
 
- 
+  const handleChange = e => {
+    setSearch(e.target.value);
+  };
 
   const filteredCrypto = crypto.filter(crypto =>
     crypto.name.toLowerCase().includes(search.toLowerCase())
@@ -28,7 +30,17 @@ function App() {
 
   return (
     <div className='crypto-app'>
-      
+      <div className='crypto-search'>
+        <h1 className='crypto-text'>Search Currency</h1>
+        <form>
+          <input
+            className='crypto-input'
+            type='text'
+            onChange={handleChange}
+            placeholder='Search'
+          />
+        </form>
+      </div>
        
       
       {filteredCrypto.map(crypto => {

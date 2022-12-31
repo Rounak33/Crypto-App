@@ -16,9 +16,35 @@
   color: #fff;
 }
 
-
-.crypto-text {
-  margin-bottom: 32px;
-  text-align: center;
+.crypto-search {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
+.crypto-text {
+margin-bottom: 30px ;
+margin-top: 50px ;
+text-align: center;
+}
+
+.crypto-input {
+  padding-left: 16px;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 90%
+  );
+  color: #e2e2e2;
+}
+
+.crypto-input::placeholder {
+  color: #e2e2e2;
+}
